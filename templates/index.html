@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orderman - Головна</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Піцерія "Orderman"</h1>
+        <img src="{{ url_for('static', filename='images/pizza_main.jpg') }}" alt="Піцерія Orderman" class="main-img">
+        <a href="{{ url_for('menu') }}" class="menu-link">МЕНЮ</a>
+    </div>
+</body>
+</html>

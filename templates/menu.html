@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orderman - Меню</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Меню</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Зображення</th>
+                    <th>Назва піци</th>
+                    <th>Опис інгредієнтів</th>
+                    <th>Ціна (грн)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for pizza in menu %}
+                <tr>
+                    <td>
+                        <!-- Завантаження зображення піци -->
+                        <img src="{{ url_for('static', filename='images/' + pizza.name | lower | replace(' ', '_') + '.jpg') }}" alt="{{ pizza.name }}" class="pizza-img">
+                    </td>
+                    <td>{{ pizza.name }}</td>
+                    <td>{{ pizza.ingredients }}</td>
+                    <td>{{ pizza.price }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="{{ url_for('index') }}" class="back-link">Повернутися на головну</a>
+    </div>
+</body>
+</html>
